@@ -14,20 +14,22 @@ if($system == false) {
 if(is_post_request()) {
 
   // Save record using post parameters
-  $args = [];
-  $args['system_name'] = $_POST['system_name'] ?? NULL;
-  $args['area_council'] = $_POST['area_council'] ?? NULL;
-  $args['island'] = $_POST['island'] ?? NULL;
-  $args['province'] = $_POST['province'] ?? NULL;
-  $args['latitude'] = $_POST['latitude'] ?? NULL;
-  $args['longitude'] = $_POST['longitude'] ?? NULL;
-  $args['elevation'] = $_POST['elevation'] ?? NULL;
-  $args['resource_type'] = $_POST['resource_type'] ?? NULL;
-  $args['system_type'] = $_POST['system_type'] ?? NULL;
-  $args['improved'] = $_POST['improved'] ?? NULL;
-  $args['functionality'] = $_POST['functionality'] ?? NULL;
-  $args['number_users'] = $_POST['number_users'] ?? NULL;
-  $args['improved'] = $_POST['improved'] ?? NULL;
+  $args = $_POST['system'];
+
+  // $args = [];
+  // $args['system_name'] = $_POST['system_name'] ?? NULL;
+  // $args['area_council'] = $_POST['area_council'] ?? NULL;
+  // $args['island'] = $_POST['island'] ?? NULL;
+  // $args['province'] = $_POST['province'] ?? NULL;
+  // $args['latitude'] = $_POST['latitude'] ?? NULL;
+  // $args['longitude'] = $_POST['longitude'] ?? NULL;
+  // $args['elevation'] = $_POST['elevation'] ?? NULL;
+  // $args['resource_type'] = $_POST['resource_type'] ?? NULL;
+  // $args['system_type'] = $_POST['system_type'] ?? NULL;
+  // $args['improved'] = $_POST['improved'] ?? NULL;
+  // $args['functionality'] = $_POST['functionality'] ?? NULL;
+  // $args['number_users'] = $_POST['number_users'] ?? NULL;
+  // $args['improved'] = $_POST['improved'] ?? NULL;
 
   $system->merge_attributes($args);
   $result = $system->update();
