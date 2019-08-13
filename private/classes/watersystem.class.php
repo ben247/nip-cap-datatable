@@ -59,7 +59,7 @@ class WaterSystem {
 
   // create dynamic attribute list
   public function create() {
-    $attributes = $this->attributes();
+    $attributes = $this->sanitized_attributes();
     $sql = "INSERT INTO t01a_water_system (";
     $sql .= join(', ', array_keys($attributes));
     $sql .= ") VALUES ('";
@@ -72,6 +72,28 @@ class WaterSystem {
     return $result;
   }
 
+  public function update() {
+    $attributes = $this->sanitized_attributes();
+    $attribute_pairs = [];
+    foreach($attributes as $key => $value) {
+      $attribute_pairs[] = "{$key}='{$value}'";
+    }
+    $sql = "UPDATE t01a_water_system SET ";
+    $sql .= join(', ', $attribute_pairs);
+    $sql .= " WHERE id='" . self::$database->escape_string($this->id) . "' ";
+    $sql .= "LIMIT 1";
+    $result = self::$database->query($sql);
+    return $result;
+  }
+
+  public function merge_attributes($args=[]) {
+    foreach($args as $key => $value) {
+      if(property_exists($this, $key) && !is_null($value)) {
+        $this->$key = $value;
+      }
+    }
+  }
+
   // properties which have database columns, excluding ID
   public function attributes() {
     $attributes = [];
@@ -80,6 +102,14 @@ class WaterSystem {
       $attributes[$column] = $this->$column;
     }
     return $attributes;
+  }
+  // sanitize using escape_string()
+  protected function sanitized_attributes() {
+    $sanitized = [];
+    foreach($this->attributes() as $key => $value) {
+      $sanitized[$key] = self::$database->escape_string($value);
+    }
+    return $sanitized;
   }
 
   // ----- END OF ACTIVE RECORD CODE ------
