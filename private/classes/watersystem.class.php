@@ -128,6 +128,17 @@ class WaterSystem {
     return $sanitized;
   }
 
+  public function delete() {
+    $sql = "DELETE FROM t01a_water_system ";
+    $sql .= "WHERE id='" . self::$database->escape_string($this->id) . "' ";
+    $sql .= "LIMIT 1";
+    $result = self::$database->query($sql);
+    return $result;
+    // after deleting, the instance of the object will still exist
+    // this can be usful..
+    // echo $user->first_name . " was deleted. ";
+  }
+
   // ----- END OF ACTIVE RECORD CODE ------
 
   public $system_name;

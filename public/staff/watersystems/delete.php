@@ -5,11 +5,17 @@ require_once('../../../private/initialize.php');
 if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/watersystems/index.php'));
 }
+
 $id = $_GET['id'];
+$system = WaterSystem::find_by_id($id);
+if($system == false) {
+  redirect_to(url_for('/staff/watersystems/index.php'));
+}
 
 if(is_post_request()) {
 
   // Delete bicycle
+  $result = $system->delete();
 
   $_SESSION['message'] = 'The bicycle was deleted successfully.';
   redirect_to(url_for('/staff/watersystems/index.php'));
@@ -30,7 +36,7 @@ if(is_post_request()) {
   <div class="bicycle delete">
     <h1>Delete Bicycle</h1>
     <p>Are you sure you want to delete this bicycle?</p>
-    <p class="item"><?php echo h('Bike name'); ?></p>
+    <p class="item"><?php echo h($system->name()); ?></p>
 
     <form action="<?php echo url_for('/staff/watersystems/delete.php?id=' . h(u($id))); ?>" method="post">
       <div id="operations">
