@@ -51,7 +51,7 @@ if(is_post_request()) {
   <div class="bicycle new">
     <h1>Create Bicycle</h1>
 
-    <?php // echo display_errors($errors); ?>
+    <?php echo display_errors($system->errors); ?>
 
     <form action="<?php echo url_for('/staff/watersystems/new.php'); ?>" method="post">
 

@@ -7,6 +7,7 @@ class WaterSystem {
 // static makes accessible without an instantiation
   static protected $database;
   static protected $db_columns = ['id', 'system_name', 'area_council', 'island', 'province', 'latitude', 'longitude', 'elevation', 'resource_type', 'system_type', 'improved', 'functionality', 'number_users'];
+  public $errors = [];
 
   static public function set_database($database) {
     self::$database = $database;
@@ -57,8 +58,20 @@ class WaterSystem {
     return $object;
   }
 
+  protected function validate() {
+    $this->errors = [];
+
+    if(is_blank($this->system_name)) {
+      $this->errors[] = "System Name cannot be blank.";
+    }
+    return $this->errors;
+  }
+
   // create dynamic attribute list
   public function create() {
+    $this->validate();
+    if(!empty($this->errors)) { return false; }
+
     $attributes = $this->sanitized_attributes();
     $sql = "INSERT INTO t01a_water_system (";
     $sql .= join(', ', array_keys($attributes));
@@ -73,6 +86,9 @@ class WaterSystem {
   }
 
   public function update() {
+    $this->validate();
+    if(!empty($this->errors)) { return false; }
+
     $attributes = $this->sanitized_attributes();
     $attribute_pairs = [];
     foreach($attributes as $key => $value) {
