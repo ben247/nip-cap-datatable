@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <h1>Chain Gang Staff Area</h1>
+      <h1>Staff Area</h1>
     </header>
 
     <navigation>

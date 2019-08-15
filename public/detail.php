@@ -21,7 +21,7 @@
 
 <div id="main">
 
-  <a href="watersystem.php">Back to Inventory</a>
+  <a href="watersystem.php">Back to Water System list</a>
 
   <div id="page">
 

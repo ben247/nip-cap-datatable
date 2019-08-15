@@ -5,7 +5,7 @@
 <div id="main">
 
   <ul id="menu">
-    <li><a href="<?php echo url_for('/watersystem.php'); ?>">View Our Inventory</a></li>
+    <li><a href="<?php echo url_for('/watersystem.php'); ?>">View Water Systems</a></li>
     <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
   </ul>
     
