@@ -37,7 +37,7 @@ if(is_post_request()) {
   $result = $system->update();
 
   if($result === true) {
-    $_SESSION['message'] = 'The bicycle was updated successfully.';
+    $session->message('The water system was updated successfully.');
     redirect_to(url_for('/staff/watersystems/show.php?id=' . $id));
   } else {
     // show errors

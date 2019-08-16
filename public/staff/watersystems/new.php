@@ -30,7 +30,7 @@ if(is_post_request()) {
 
   if($result === true) {
     $new_id = $system->id;
-    $_SESSION['message'] = 'The bicycle was created successfully.';
+    $session->message('The water system was created successfully.');
     redirect_to(url_for('/staff/watersystems/show.php?id=' . $new_id));
   } else {
     // show errors

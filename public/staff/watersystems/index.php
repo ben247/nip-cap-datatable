@@ -8,7 +8,7 @@
 $watersystem = WaterSystem::find_all();
   
 ?>
-<?php $page_title = 'Bicycles'; ?>
+<?php $page_title = 'Water Systems'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -16,7 +16,7 @@ $watersystem = WaterSystem::find_all();
     <h1>Bicycles</h1>
 
     <div class="actions">
-      <a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">Add Bicycle</a>
+      <a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">Add new Water System</a>
     </div>
 
   	<table class="list">

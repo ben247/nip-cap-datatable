@@ -18,7 +18,7 @@ $system = WaterSystem::find_by_id($id);
 
   <div class="bicycle show">
 
-    <h1>Bicycle:</h1>
+    <h1>Water System:</h1>
 
     <div class="attributes">
       <dl>

@@ -19,7 +19,7 @@ if(is_post_request()) {
   // Delete bicycle
   $result = $system->delete();
 
-  $_SESSION['message'] = 'The bicycle was deleted successfully.';
+  $session->message('The water system was deleted successfully.');
   redirect_to(url_for('/staff/watersystems/index.php'));
 
 } else {
