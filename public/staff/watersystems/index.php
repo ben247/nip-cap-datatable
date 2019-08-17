@@ -71,18 +71,8 @@ $watersystem = WaterSystem::find_by_sql($sql);
     </table>
     
 <?php
-
-if($pagination->total_pages() > 1) {
-  echo "<div class=\"pagination\">";
-
-  $url = url_for('/staff/watersystems/index.php');
-
-  echo $pagination->previous_link($url);
-  echo $pagination->next_link($url);
-
-  echo "</div>";
-}
-
+$url = url_for('/staff/watersystems/index.php');
+echo $pagination->page_links($url);
 ?>
 
   </div>
