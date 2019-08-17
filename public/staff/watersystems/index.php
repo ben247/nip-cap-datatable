@@ -1,8 +1,11 @@
 <?php require_once('../../../private/initialize.php'); ?>
-
 <?php require_login(); ?>
 
 <?php
+
+$current_page = $_GET['page'] ?? 1;
+$per_page = 5;
+$total_count = WaterSystem::count_all();
 
 $pagination = new Pagination($current_page, $per_page, $total_count);
 
@@ -10,6 +13,11 @@ $pagination = new Pagination($current_page, $per_page, $total_count);
 // use pagination instead
 // $watersystem = WaterSystem::find_all();
   
+$sql = "SELECT * FROM t01a_water_system ";
+$sql .= "LIMIT {$per_page} ";
+$sql .= "OFFSET {$pagination->offset()}";
+$watersystem = WaterSystem::find_by_sql($sql);
+
 ?>
 <?php $page_title = 'Water Systems'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
@@ -60,7 +68,22 @@ $pagination = new Pagination($current_page, $per_page, $total_count);
           <td><a class="action" href="<?php echo url_for('/staff/watersystems/delete.php?id=' . h(u($system->id))); ?>">Delete</a></td>
     	  </tr>
       <?php } ?>
-  	</table>
+    </table>
+    
+<?php
+
+if($pagination->total_pages() > 1) {
+  echo "<div class=\"pagination\">";
+
+  $url = url_for('/staff/watersystems/index.php');
+
+  echo $pagination->previous_link($url);
+  echo $pagination->next_link($url);
+
+  echo "</div>";
+}
+
+?>
 
   </div>
 
