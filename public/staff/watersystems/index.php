@@ -3,9 +3,12 @@
 <?php require_login(); ?>
 
 <?php
-  
-// Find all bicycles;
-$watersystem = WaterSystem::find_all();
+
+$pagination = new Pagination($current_page, $per_page, $total_count);
+
+// find all bicycles;
+// use pagination instead
+// $watersystem = WaterSystem::find_all();
   
 ?>
 <?php $page_title = 'Water Systems'; ?>
