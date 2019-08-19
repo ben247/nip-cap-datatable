@@ -43,7 +43,7 @@ if(is_post_request()) {
 
 ?>
 
-<?php $page_title = 'Create Bicycle'; ?>
+<?php $page_title = 'Create'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -51,7 +51,7 @@ if(is_post_request()) {
   <a class="back-link" href="<?php echo url_for('/staff/watersystems/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="bicycle new">
-    <h1>Create Bicycle</h1>
+    <h2>Create Water System</h2>
 
     <?php echo display_errors($system->errors); ?>
 
@@ -60,7 +60,7 @@ if(is_post_request()) {
       <?php include('form_fields.php'); ?>
 
       <div id="operations">
-        <input type="submit" value="Create Bicycle" />
+        <input type="submit" value="Create" />
       </div>
     </form>
 

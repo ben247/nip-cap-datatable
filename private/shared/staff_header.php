@@ -6,7 +6,7 @@
 
 <html lang="en">
   <head>
-    <title>Chain Gang - <?php echo h($page_title); ?></title>
+    <title>NIP-CAP Water System - <?php echo h($page_title); ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
   </head>

@@ -10,7 +10,7 @@
     redirect_to('watersystem.php');
   }
 
-  // Find bicycle using ID
+  // Find watersystem using ID
 
   $system = WaterSystem::find_by_id($id);
 

@@ -3,13 +3,14 @@
 
 <?php
 
+// pagination
 $current_page = $_GET['page'] ?? 1;
 $per_page = 5;
 $total_count = WaterSystem::count_all();
 
 $pagination = new Pagination($current_page, $per_page, $total_count);
 
-// find all bicycles;
+// find all water systems;
 // use pagination instead
 // $watersystem = WaterSystem::find_all();
   
@@ -19,12 +20,16 @@ $sql .= "OFFSET {$pagination->offset()}";
 $watersystem = WaterSystem::find_by_sql($sql);
 
 ?>
-<?php $page_title = 'Water Systems'; ?>
+
+<?php $page_title = 'NIP-CAP Water Systems'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
   <div class="bicycles listing">
-    <h1>Bicycles</h1>
+    <div class="intro">
+      <h2>NIP-CAP Water Systems</h2>
+      <h3>table - t01a_water_system</h3>
+    </div>
 
     <div class="actions">
       <a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">Add new Water System</a>

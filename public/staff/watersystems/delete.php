@@ -16,7 +16,7 @@ if($system == false) {
 
 if(is_post_request()) {
 
-  // Delete bicycle
+  // Delete water system
   $result = $system->delete();
 
   $session->message('The water system was deleted successfully.');
@@ -28,7 +28,7 @@ if(is_post_request()) {
 
 ?>
 
-<?php $page_title = 'Delete Bicycle'; ?>
+<?php $page_title = 'Delete'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -36,13 +36,13 @@ if(is_post_request()) {
   <a class="back-link" href="<?php echo url_for('/staff/watersystems/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="bicycle delete">
-    <h1>Delete Bicycle</h1>
-    <p>Are you sure you want to delete this bicycle?</p>
+    <h2>Delete Water System</h2>
+    <p>Are you sure you want to delete this Water System?</p>
     <p class="item"><?php echo h($system->name()); ?></p>
 
     <form action="<?php echo url_for('/staff/watersystems/delete.php?id=' . h(u($id))); ?>" method="post">
       <div id="operations">
-        <input type="submit" name="commit" value="Delete Bicycle" />
+        <input type="submit" name="commit" value="Delete" />
       </div>
     </form>
   </div>

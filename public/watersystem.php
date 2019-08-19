@@ -1,6 +1,26 @@
 <?php require_once('../private/initialize.php'); ?>
 
-<?php $page_title = 'Inventory'; ?>
+<?php
+
+// pagination
+$current_page = $_GET['page'] ?? 1;
+$per_page = 5;
+$total_count = WaterSystem::count_all();
+
+$pagination = new Pagination($current_page, $per_page, $total_count);
+
+// find all water ysytems;
+// use pagination instead
+// $watersystem = WaterSystem::find_all();
+  
+$sql = "SELECT * FROM t01a_water_system ";
+$sql .= "LIMIT {$per_page} ";
+$sql .= "OFFSET {$pagination->offset()}";
+$watersystem = WaterSystem::find_by_sql($sql);
+
+?>
+
+<?php $page_title = 'NIP-CAP Water Systems'; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="main">
@@ -52,6 +72,11 @@ $watersystem = WaterSystem::find_all();
       <?php } ?>
 
     </table>
+
+<?php
+$url = url_for('/watersystem.php');
+echo $pagination->page_links($url);
+?>
 
   </div>
 
