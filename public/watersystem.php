@@ -50,8 +50,6 @@ $watersystem = WaterSystem::find_by_sql($sql);
 
 <?php
 
-$watersystem = WaterSystem::find_all();
-
 ?>
       <?php foreach($watersystem as $system) { ?>
       <tr>
