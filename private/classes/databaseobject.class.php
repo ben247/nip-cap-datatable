@@ -49,6 +49,17 @@ class DatabaseObject {
           return false;
         }
       }
+
+      // inner join - SELECT * FROM t01a_water_system INNER JOIN t04_dwssp USING (system_name) ;
+      static public function find_by_join($system_name) {
+        $sql = "SELECT * FROM t01a_water_system INNER JOIN t04_dwssp USING (system_name)";
+        $obj_array = static::find_by_sql($sql);
+        if(!empty($obj_array)) {
+          return array_shift($obj_array);
+        } else {
+          return false;
+        }
+      }
     
       static protected function instantiate($record) {
         $object = new static;

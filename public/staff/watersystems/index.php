@@ -68,7 +68,7 @@ $watersystem = WaterSystem::find_by_sql($sql);
           <td><?php echo h($system->improved); ?></td>
           <td><?php echo h($system->functionality); ?></td>
           <td><?php echo h($system->number_users); ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/watersystems/show.php?id=' . h(u($system->id))); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/watersystems/show.php?system_name=' . h(u($system->system_name))); ?>">View</a></td>
           <td><a class="action" href="<?php echo url_for('/staff/watersystems/edit.php?id=' . h(u($system->id))); ?>">Edit</a></td>
           <td><a class="action" href="<?php echo url_for('/staff/watersystems/delete.php?id=' . h(u($system->id))); ?>">Delete</a></td>
     	  </tr>
