@@ -62,7 +62,7 @@ $system = Dwssp::find_by_left_join($system_name);
 
   <table class="list">
       <tr>
-        <th>System Name</th>
+        <th>System ID</th>
         <th>DWSSP ID</th>
         <th>Facilitator</th>
         <th>Email</th>
@@ -71,7 +71,7 @@ $system = Dwssp::find_by_left_join($system_name);
       </tr>
 
         <tr>
-          <td><?php echo h($system->system_name); ?></td>
+          <td><?php echo h($system->system_id); ?></td>
           <td><?php echo h($system->dwssp_id); ?></td>
           <td><?php echo h($system->facilitator_cd00a); ?></td>
           <td><?php echo h($system->email_cd00b); ?></td>

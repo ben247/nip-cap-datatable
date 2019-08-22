@@ -2,7 +2,7 @@
 
 class Dwssp extends WaterSystem {
 
-    public $system_name;
+    public $system_id;
     public $id;
     public $dwssp_id;
     public $facilitator_cd00a;
