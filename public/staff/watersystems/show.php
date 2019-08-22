@@ -4,9 +4,12 @@
 
 <?php
 
-$system_name = $_GET['system_name'] ?? false; // PHP > 7.0
+$system_name = $_GET['system_name'] ?? 1; // PHP > 7.0
 
-$system = Dwssp::find_by_join($system_name);
+$system = Dwssp::find_by_left_join($system_name);
+
+// left join
+
 
 ?>
 
@@ -59,6 +62,7 @@ $system = Dwssp::find_by_join($system_name);
 
   <table class="list">
       <tr>
+        <th>System Name</th>
         <th>DWSSP ID</th>
         <th>Facilitator</th>
         <th>Email</th>
@@ -67,6 +71,7 @@ $system = Dwssp::find_by_join($system_name);
       </tr>
 
         <tr>
+          <td><?php echo h($system->system_name); ?></td>
           <td><?php echo h($system->dwssp_id); ?></td>
           <td><?php echo h($system->facilitator_cd00a); ?></td>
           <td><?php echo h($system->email_cd00b); ?></td>

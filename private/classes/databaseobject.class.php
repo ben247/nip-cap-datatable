@@ -51,8 +51,13 @@ class DatabaseObject {
       }
 
       // inner join - SELECT * FROM t01a_water_system INNER JOIN t04_dwssp USING (system_name) ;
-      static public function find_by_join($system_name) {
-        $sql = "SELECT * FROM t01a_water_system INNER JOIN t04_dwssp USING (system_name)";
+      // $sql .= " LEFT JOIN t04_dwssp ON t04_dwssp.system_name = t01a_water_system.system_name WHERE t01a_water_system.system_name = '" . self::$database->escape_string($system_name) . "'";
+
+      static public function find_by_left_join($system_name) {
+        $sql = "SELECT * FROM " . static::$table_name . " ";
+        $sql .= " LEFT JOIN t04_dwssp";
+        $sql .= " ON t04_dwssp.system_name = t01a_water_system.system_name";
+        $sql .= " WHERE t01a_water_system.system_name='" . self::$database->escape_string($system_name) . "'";
         $obj_array = static::find_by_sql($sql);
         if(!empty($obj_array)) {
           return array_shift($obj_array);
