@@ -1,5 +1,5 @@
-<footer>
-<p>&copy; <?php echo date('Y'); ?> | <a href="https://www.riscon.solutions/">www.riscon.solutions</a> </p>
+<footer class="staff-footer">
+<p>&copy; <?php echo date('Y'); ?> | <a class="footer-link" href="https://www.riscon.solutions/">www.riscon.solutions</a> </p>
 </footer>
 
 </body>

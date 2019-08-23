@@ -8,11 +8,11 @@
   <head>
     <title>NIP-CAP Water System - <?php echo h($page_title); ?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
+    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/style.css'); ?>" />
   </head>
 
   <body>
-    <header>
+    <header class="staff-header">
       <h1>Staff Area</h1>
     </header>
 

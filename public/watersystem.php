@@ -31,7 +31,7 @@ $watersystem = WaterSystem::find_by_sql($sql);
       <h3>table - t01a_water_system</h3>
     </div>
 
-    <table id="inventory">
+    <table id="public-table">
       <tr>
         <th>System Name</th>
         <th>Area Council</th>

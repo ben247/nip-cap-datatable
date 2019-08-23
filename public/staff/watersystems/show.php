@@ -24,7 +24,7 @@ $system = Dwssp::find_by_left_join($system_name);
       <h3>table - t01a_water_system</h3>
     </div>
 
-  	<table class="list">
+  	<table id="staff-table">
       <tr>
         <th>System Name</th>
         <th>Area Council</th>
@@ -60,7 +60,7 @@ $system = Dwssp::find_by_left_join($system_name);
 
   <div>
 
-  <table class="list">
+  <table id="staff-table">
       <tr>
         <th>System ID</th>
         <th>DWSSP ID</th>

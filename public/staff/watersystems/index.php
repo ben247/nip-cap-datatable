@@ -35,7 +35,7 @@ $watersystem = WaterSystem::find_by_sql($sql);
       <a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">Add new Water System</a>
     </div>
 
-  	<table class="list">
+  	<table id="staff-table">
       <tr>
         <th>System Name</th>
         <th>Area Council</th>

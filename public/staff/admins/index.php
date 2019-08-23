@@ -19,7 +19,7 @@ $admins = Admin::find_all();
       <a class="action" href="<?php echo url_for('/staff/admins/new.php'); ?>">Add Admin</a>
     </div>
 
-  	<table class="list">
+  	<table id="staff-table">
       <tr>
         <th>ID</th>
         <th>First name</th>
