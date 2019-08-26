@@ -1,3 +1,6 @@
+-- set existing column to auto-increment
+ALTER TABLE users MODIFY id INTEGER NOT NULL AUTO_INCREMENT;
+
 CREATE TABLE t02_water_committee
 (
   id INT(11) NOT NULL
@@ -24,9 +27,9 @@ CREATE TABLE t02_water_committee
   INSERT INTO 
 t02_water_committee
   VALUES
-    ('', 'WS_Aota', 12345, 'Dave', 'dave@email.com', 2018-06-08, 'https://drive.google.com/open?id=15bL-UHcP-crInLYVtIeofgZ0Mhh5uGO1'),
-    ('', 'WS_Asalmagaru', 12346, 'Barry', 'baz@email.com', 2018-09-04, 'https://drive.google.com/open?id=15bL-UHcP-crInLYVtIeofgZ0Mhh5uGO1'),
-    ('', 'WS_Asorok', 12347, 'Andy', 'andy@email.com', 2018-03-05, 'https://drive.google.com/open?id=15bL-UHcP-crInLYVtIeofgZ0Mhh5uGO1');
+    ('', 'WS_Aota', 12345, 2018-11-04, 'DATA', 'YES', 'NO'),
+    ('', 'WS_Asalmagaru', 12346, 2018-11-04, 'DATA', 'YES', 'NO'),
+    ('', 'WS_Asorok', 12347, 2018-11-04, 'DATA', 'YES', 'NO');
 
   CREATE TABLE t04_dwssp
   (
