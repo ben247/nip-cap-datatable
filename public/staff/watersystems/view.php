@@ -6,7 +6,7 @@
 
 $system_name = $_GET['system_name'] ?? 1; // PHP > 7.0
 
-$system = Dwssp::find_by_left_join($system_name);
+$system = SubTable::find_by_left_join($system_name);
 
 // left join
 
@@ -15,13 +15,14 @@ $system = Dwssp::find_by_left_join($system_name);
 
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
+<div id="content">
+
 <a class="back-link" href="<?php echo url_for('/staff/watersystems/index.php'); ?>">&laquo; Back to List</a>
 
-<div id="content">
   <div class="bicycles listing">
-    <div class="intro">
-      <h2>NIP-CAP Water Systems</h2>
-      <h3>table - t01a_water_system</h3>
+    <div class="title">
+      <h2>NIP-CAP Database</h2>
+      <h3>T01A Water System</h3>
     </div>
 
   	<table id="staff-table">
@@ -59,8 +60,11 @@ $system = Dwssp::find_by_left_join($system_name);
   </div>
 
   <div>
+    <div class="title">
+      <h3>T04 DWSSP<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Add new</a></h3>
+    </div>
 
-  <table id="staff-table">
+    <table id="staff-table">
       <tr>
         <th>System ID</th>
         <th>DWSSP ID</th>
@@ -81,6 +85,103 @@ $system = Dwssp::find_by_left_join($system_name);
     </table>
 
   </div>
+  
+  <div>
+    <div class="title">
+      <h3>T02 Water Committee<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Add new</a></h3>
+    </div>
+    <table id="staff-table">
+      <tr>
+        <th>Water Committee ID</th>
+        <th>Date Registered</th>
+        <th>Req Name</th>
+        <th>No Men</th>
+        <th>No Women</th>
+      </tr>
+
+        <tr>
+          <td><?php echo h($system->wc_id); ?></td>
+          <td><?php echo h($system->date_reg); ?></td>
+          <td><?php echo h($system->req_name); ?></td>
+          <td><?php echo h($system->no_men); ?></td>
+          <td><?php echo h($system->no_women); ?></td>
+    	  </tr>
+    </table>
+  </div>
+  <div>
+    <div class="title">
+      <h3>T03 DWQT<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Add new</a></h3>
+    </div>
+    <table id="staff-table">
+      <tr>
+        <th>Sample ID</th>
+        <th>Sample Site ID</th>
+        <th>Sample Site Name</th>
+        <th>Area Council</th>
+        <th>Island</th>
+        <th>Province</th>
+        <th>Date</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Elevation</th>
+        <th>Flow Rate</th>
+        <th>Description</th>
+        <th>Source Type</th>
+        <th>Spec Source Type</th>
+        <th>System Type</th>
+        <th>Conductivity</th>
+        <th>Turbidity</th>
+        <th>pH</th>
+        <th>Taste/Odor</th>
+        <th>Hardness</th>
+        <th>Fluoride</th>
+        <th>Arsenic</th>
+        <th>Copper</th>
+        <th>Lead</th>
+        <th>Iron</th>
+        <th>Ecoli Test</th>
+        <th>Ecoli</th>
+        <th>Total Ecoli</th>
+        <th>Faecalcoli</th>
+        <th>Comments</th>
+        <th>Shared</th>
+      </tr>
+
+        <tr>
+          <td><?php echo h($system->s1a_sampleid); ?></td>
+          <td><?php echo h($system->s1a1_samplesiteid); ?></td>
+          <td><?php echo h($system->s1b_samplesitename); ?></td>
+          <td><?php echo h($system->s1c_area_council); ?></td>
+          <td><?php echo h($system->s1d_island); ?></td>
+          <td><?php echo h($system->s1e_province); ?></td>
+          <td><?php echo h($system->s1f_date); ?></td>
+          <td><?php echo h($system->s2a_latitude); ?></td>
+          <td><?php echo h($system->s2b_longitude); ?></td>
+          <td><?php echo h($system->s2c_elevation); ?></td>
+          <td><?php echo h($system->s2d_flowrate); ?></td>
+          <td><?php echo h($system->s2e_description); ?></td>
+          <td><?php echo h($system->s3a_sourcetype); ?></td>
+          <td><?php echo h($system->s3b_specsourcetype); ?></td>
+          <td><?php echo h($system->s3c_systemtype); ?></td>
+          <td><?php echo h($system->s4a_conductivity); ?></td>
+          <td><?php echo h($system->s4b_turbidity); ?></td>
+          <td><?php echo h($system->s4c_ph); ?></td>
+          <td><?php echo h($system->s4d_tasteodor); ?></td>
+          <td><?php echo h($system->s4e_hardness); ?></td>
+          <td><?php echo h($system->s5a_fluoride); ?></td>
+          <td><?php echo h($system->s5b_arsenic); ?></td>
+          <td><?php echo h($system->s5c_copper); ?></td>
+          <td><?php echo h($system->s5d_lead); ?></td>
+          <td><?php echo h($system->s5e_iron); ?></td>
+          <td><?php echo h($system->s6a0_ecolitest); ?></td>
+          <td><?php echo h($system->s6a_ecoli); ?></td>
+          <td><?php echo h($system->s6b_totalcoli); ?></td>
+          <td><?php echo h($system->s6c_faecalcoli); ?></td>
+          <td><?php echo h($system->s7a_comments); ?></td>
+          <td><?php echo h($system->s8a_shared); ?></td>
+        </tr>
+    </table>
+    </div>
 
 </div>
 

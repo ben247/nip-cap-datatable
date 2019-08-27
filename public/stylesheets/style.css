@@ -13,6 +13,20 @@ font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 background: #FFFFFF;
 }
 
+h2 {
+  font-size: 18px;
+  color: #282828;
+}
+
+h3 {
+  font-size: 13px;
+  color: #282828;
+}
+
+.title {
+  padding-top: 30px;
+}
+
    /* unvisited link */
 a:link {
     color: #0B61A5;
@@ -97,7 +111,6 @@ navigation {
 
   #main {
     width: 100%;
-    height: 500px;
     margin: 0 auto;
   }
 
@@ -110,10 +123,10 @@ navigation {
     padding: 2px;
     background: #0B61A5;
     color: white;
-    position: fixed;
     left: 0;
     bottom: 0;
     text-align: center;
+    margin-top: 150px;
   }
 
   .public-footer {
@@ -315,7 +328,7 @@ navigation {
   }
 
 #staff-table {
-    margin-top: 30px;
+    margin-top: 10px;
     border-collapse: collapse;
     vertical-align: top;
   }

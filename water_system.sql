@@ -1,3 +1,74 @@
+CREATE TABLE t03_dqwt
+(
+  id INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
+  system_id VARCHAR
+(255),
+  s1a_sampleid VARCHAR
+(255),
+  s1a1_samplesiteid VARCHAR
+(255),
+  s1b_samplesitename VARCHAR
+(255),
+  s1c_area_council VARCHAR
+(255),
+  s1d_island VARCHAR
+(255),
+  s1e_province VARCHAR
+(255),
+  s1f_date DATE,
+  s2a_latitude DECIMAL
+(11, 8) NOT NULL,
+  s2b_longitude DECIMAL
+(11, 8) NOT NULL,
+  s2c_elevation INT
+(11),
+  s2d_flowrate INT
+(11),
+  s2e_description VARCHAR
+(255),
+  s3a_sourcetype VARCHAR
+(255),
+  s3b_specsourcetype VARCHAR
+(255),
+  s3c_systemtype VARCHAR
+(255),
+  s4a_conductivity VARCHAR
+(255),
+  s4b_turbidity VARCHAR
+(255),
+  s4c_ph VARCHAR
+(255),
+  s4d_tasteodor VARCHAR
+(255),
+  s4e_hardness VARCHAR
+(255),
+  s5a_fluoride VARCHAR
+(255),
+  s5b_arsenic VARCHAR
+(255),
+  s5c_copper VARCHAR
+(255),
+  s5d_lead VARCHAR
+(255),
+  s5e_iron VARCHAR
+(255),
+  s6a0_ecolitest VARCHAR
+(255),
+  s6a_ecoli VARCHAR
+(255),
+  s6b_totalcoli VARCHAR
+(255),
+  s6c_faecalcoli VARCHAR
+(255),
+  s7a_comments VARCHAR
+(255),
+  s8a_shared VARCHAR
+(255)
+  FOREIGN KEY
+(system_id) REFERENCES t01a_water_system
+(system_name)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- set existing column to auto-increment
 ALTER TABLE users MODIFY id INTEGER NOT NULL AUTO_INCREMENT;
 

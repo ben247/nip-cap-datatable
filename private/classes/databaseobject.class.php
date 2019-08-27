@@ -57,6 +57,10 @@ class DatabaseObject {
         $sql = "SELECT * FROM " . static::$table_name . " ";
         $sql .= " LEFT JOIN t04_dwssp";
         $sql .= " ON t04_dwssp.system_id = t01a_water_system.system_name";
+        $sql .= " LEFT JOIN t02_water_committee";
+        $sql .= " ON t02_water_committee.system_id = t01a_water_system.system_name";
+        $sql .= " LEFT JOIN t03_dqwt";
+        $sql .= " ON t03_dqwt.system_id = t01a_water_system.system_name";
         $sql .= " WHERE t01a_water_system.system_name='" . self::$database->escape_string($system_name) . "'";
         $obj_array = static::find_by_sql($sql);
         if(!empty($obj_array)) {
