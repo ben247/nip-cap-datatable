@@ -94,9 +94,9 @@ $system = SubTable::find_by_left_join($system_name);
       <tr>
         <th>Water Committee ID</th>
         <th>Date Registered</th>
-        <th>Req Name</th>
-        <th>No Men</th>
-        <th>No Women</th>
+        <th>Requested Name</th>
+        <th>Number of Men</th>
+        <th>Number of Women</th>
       </tr>
 
         <tr>

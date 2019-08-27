@@ -27,8 +27,8 @@ $watersystem = WaterSystem::find_by_sql($sql);
 <div id="content">
   <div class="bicycles listing">
     <div class="intro">
-      <h2>NIP-CAP Water Systems</h2>
-      <h3>table - t01a_water_system</h3>
+      <h2>NIP-CAP Database</h2>
+      <h3>T01A Water System</h3>
     </div>
 
     <div class="actions">
