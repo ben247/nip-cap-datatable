@@ -61,7 +61,7 @@ $system = SubTable::find_by_left_join($system_name);
 
   <div>
     <div class="title">
-      <h3>T04 DWSSP<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Add new</a></h3>
+      <h3>T04 DWSSP<a class="action" href="<?php echo url_for('/staff/watersystems/edit_dwssp.php?id=' . h(u($system->id))); ?>">Edit</a></h3>
     </div>
 
     <table id="staff-table">
@@ -88,7 +88,7 @@ $system = SubTable::find_by_left_join($system_name);
   
   <div>
     <div class="title">
-      <h3>T02 Water Committee<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Add new</a></h3>
+      <h3>T02 Water Committee<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Edit</a></h3>
     </div>
     <table id="staff-table">
       <tr>
@@ -110,7 +110,7 @@ $system = SubTable::find_by_left_join($system_name);
   </div>
   <div>
     <div class="title">
-      <h3>T03 DWQT<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Add new</a></h3>
+      <h3>T03 DWQT<a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">  Edit</a></h3>
     </div>
     <table id="staff-table">
       <tr>

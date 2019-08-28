@@ -65,7 +65,7 @@ if(is_post_request()) {
 
     <form action="<?php echo url_for('/staff/watersystems/edit.php?id=' . h(u($id))); ?>" method="post">
 
-      <?php include('form_fields.php'); ?>
+      <?php include('dwssp_form.php'); ?>
 
       <div id="operations">
         <input type="submit" value="Save" />
