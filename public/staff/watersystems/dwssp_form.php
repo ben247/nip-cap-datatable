@@ -9,51 +9,42 @@ if(!isset($system)) {
 <dl>
   <dt>System ID</dt>
     <dd>
-      <input type="text" name="system[system_name]" value="<?php echo h($system->system_name); ?>" />
+      <input type="text" name="system[system_id]" value="<?php echo h($system->system_id); ?>" />
     </dd>
 </dl>
 
 <dl>
   <dt>DWSSP ID</dt>
-  <dd>
-    <select name="system[area_council]">
-      <option value=""></option><?php foreach(WaterSystem::AREA_COUNCIL as $area_council) { ?>
-      <option value="<?php echo $area_council; ?>" <?php if($system->area_council == $area_council) { echo 'selected'; } ?>><?php echo $area_council; ?></option><?php } ?>
-    </select>
-  </dd>
+    <dd>
+      <input type="text" name="system[dwssp_id]" value="<?php echo h($system->dwssp_id); ?>" />
+    </dd>
 </dl>
 
 <dl>
   <dt>Facilitator</dt>
   <dd>
-    <select name="system[island]">
-      <option value=""></option><?php foreach(WaterSystem::ISLAND as $island) { ?>
-      <option value="<?php echo $island; ?>" <?php if($system->island == $island) { echo 'selected'; } ?>><?php echo $island; ?></option><?php } ?>
-    </select>
-  </dd>
+      <input type="text" name="system[dwssp_id]" value="<?php echo h($system->dwssp_id); ?>" />
+    </dd>
 </dl>
 
 <dl>
   <dt>Email</dt>
   <dd>
-    <select name="system[province]">
-      <option value=""></option><?php foreach(WaterSystem::PROVINCE as $province) { ?>
-      <option value="<?php echo $province; ?>" <?php if($system->province == $province) { echo 'selected'; } ?>><?php echo $province; ?></option><?php } ?>
-    </select>
-  </dd>
+      <input type="text" name="system[email_cd00b]" value="<?php echo h($system->email_cd00b); ?>" />
+    </dd>
 </dl>
 
 <dl>
   <dt>Date</dt>
   <dd>
-    <input type="text" name="system[latitude]" value="<?php echo h($system->latitude); ?>" />
+    <input type="text" name="system[date_cd007]" value="<?php echo h($system->date_cd007); ?>" />
   </dd>
 </dl>
 
 <dl>
   <dt>Document</dt>
   <dd>
-    <input type="text" name="system[longitude]" value="<?php echo h($system->longitude); ?>" />
+    <input type="text" name="system[document]" value="<?php echo h($system->document); ?>" />
   </dd>
 </dl>
 

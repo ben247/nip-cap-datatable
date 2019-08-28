@@ -50,6 +50,18 @@ class DatabaseObject {
         }
       }
 
+      // dwssp
+      static public function find_by_system_id_dwssp($system_id) {
+        $sql = "SELECT * FROM " . static::$dwssp_table_name . " ";
+        $sql .= "WHERE system_id='" . self::$database->escape_string($system_id) . "'";
+        $obj_array = static::find_by_sql($sql);
+        if(!empty($obj_array)) {
+          return array_shift($obj_array);
+        } else {
+          return false;
+        }
+      }
+
       // inner join - SELECT * FROM t01a_water_system INNER JOIN t04_dwssp USING (system_name) ;
       // $sql .= " LEFT JOIN t04_dwssp ON t04_dwssp.system_name = t01a_water_system.system_name WHERE t01a_water_system.system_name = '" . self::$database->escape_string($system_name) . "'";
 

@@ -4,11 +4,12 @@ require_once('../../../private/initialize.php');
 
 require_login();
 
-if(!isset($_GET['id'])) {
+if(!isset($_GET['system_id'])) {
   redirect_to(url_for('/staff/watersystems/index.php'));
 }
-$id = $_GET['id'];
-$system = WaterSystem::find_by_id($id);
+$system_id = $_GET['system_id'];
+
+$system = SubTable::find_by_system_id_dwssp($system_id);
 if($system == false) {
   redirect_to(url_for('/staff/watersystems/index.php'));
 }

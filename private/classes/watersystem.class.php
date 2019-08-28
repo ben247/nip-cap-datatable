@@ -32,7 +32,6 @@ class WaterSystem extends DatabaseObject {
   public const SYSTEM_TYPE = ['Direct Gravity Feed', 'Indirect Gravity Feed', 'Rainwater Capture'];
 
   public function __construct($args=[]) {
-    //$this->brand = isset($args['brand']) ? $args['brand'] : '';
     $this->system_name = $args['system_name'] ?? '';
     $this->id = $args['id'] ?? '';
     $this->area_council = $args['area_council'] ?? '';
