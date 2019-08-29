@@ -7,9 +7,9 @@ require_login();
 if(!isset($_GET['system_id'])) {
   redirect_to(url_for('/staff/watersystems/index.php'));
 }
-$system_id = $_GET['system_id'];
+$id = $_GET['id'];
 
-$system = SubTable::find_by_system_id_dwssp($system_id);
+$system = SubTable::find_by_id_dwssp($id);
 if($system == false) {
   redirect_to(url_for('/staff/watersystems/index.php'));
 }
@@ -38,8 +38,8 @@ if(is_post_request()) {
   $result = $system->update();
 
   if($result === true) {
-    $session->message('The water system was updated successfully.');
-    redirect_to(url_for('/staff/watersystems/show.php?id=' . $id));
+    $session->message('The DWSSP was updated successfully.');
+    redirect_to(url_for('/staff/watersystems/show.php?system_id=' . $id));
   } else {
     // show errors
   }
@@ -64,7 +64,7 @@ if(is_post_request()) {
 
     <?php echo display_errors($system->errors); ?>
 
-    <form action="<?php echo url_for('/staff/watersystems/edit.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/staff/watersystems/edit.php?system_id=' . h(u($id))); ?>" method="post">
 
       <?php include('dwssp_form.php'); ?>
 

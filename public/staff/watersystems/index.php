@@ -17,6 +17,7 @@ $pagination = new Pagination($current_page, $per_page, $total_count);
 $sql = "SELECT * FROM t01a_water_system ";
 $sql .= "LIMIT {$per_page} ";
 $sql .= "OFFSET {$pagination->offset()}";
+
 $watersystem = WaterSystem::find_by_sql($sql);
 
 ?>

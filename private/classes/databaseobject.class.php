@@ -51,9 +51,9 @@ class DatabaseObject {
       }
 
       // dwssp
-      static public function find_by_system_id_dwssp($system_id) {
+      static public function find_by_id_dwssp($id) {
         $sql = "SELECT * FROM " . static::$dwssp_table_name . " ";
-        $sql .= "WHERE system_id='" . self::$database->escape_string($system_id) . "'";
+        $sql .= "WHERE id='" . self::$database->escape_string($id) . "'";
         $obj_array = static::find_by_sql($sql);
         if(!empty($obj_array)) {
           return array_shift($obj_array);

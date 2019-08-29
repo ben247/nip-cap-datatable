@@ -61,7 +61,7 @@ $system = SubTable::find_by_left_join($system_name);
 
   <div>
     <div class="title">
-      <h3>T04 DWSSP<a class="action" href="<?php echo url_for('/staff/watersystems/edit_dwssp.php?id=' . h(u($system->system_id))); ?>">Edit</a></h3>
+      <h3>T04 DWSSP<a class="action" href="<?php echo url_for('/staff/watersystems/edit_dwssp.php?system_id=' . h(u($system->system_id))); ?>">  Edit</a></h3>
     </div>
 
     <table id="staff-table">
