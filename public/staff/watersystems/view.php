@@ -80,7 +80,7 @@ $system = SubTable::find_by_left_join($system_name);
           <td><?php echo h($system->facilitator_cd00a); ?></td>
           <td><?php echo h($system->email_cd00b); ?></td>
           <td><?php echo h($system->date_cd007); ?></td>
-          <td><?php echo h($system->document); ?></td>
+          <td><a target="_blank" href="<?php echo h($system->document); ?>">Link</a></td>
     	  </tr>
     </table>
 
