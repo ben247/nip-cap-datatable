@@ -15,6 +15,8 @@ class Admin extends DatabaseObject {
   public $confirm_password;
   protected $password_required = true;
 
+  // PHP > 7.0 - NULL coalescing operator. Return the first value that exists and is not NULL
+  // IF first_name is not set, then set as empty ''
   public function __construct($args=[]) {
     $this->first_name = $args['first_name'] ?? '';
     $this->last_name = $args['last_name'] ?? '';

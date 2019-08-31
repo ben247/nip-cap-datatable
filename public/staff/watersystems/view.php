@@ -4,11 +4,12 @@
 
 <?php
 
-$system_name = $_GET['system_name'] ?? 1; // PHP > 7.0
+// PHP > 7.0 - NULL coalescing operator. Return the first value that exists and is not NULL
+// IF system_name is not set, then return 1
+$system_name = $_GET['system_name'] ?? 1;
 
+// Instantiate the class to access its methods
 $system = SubTable::find_by_left_join($system_name);
-
-// left join
 
 
 ?>
