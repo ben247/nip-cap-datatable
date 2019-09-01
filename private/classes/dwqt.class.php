@@ -1,6 +1,6 @@
 <?php
 
-class Dwqt extends SubTable {
+class Dwqt extends WaterSystem {
     static protected $dwqt_table_name = 't03_dqwt';
     static protected $dwqt_db_columns = ['id', 'system_id', 'dwssp_id', 'facilitator_cd00a', 'email_cd00b', 'date_cd007', 'document'];
 

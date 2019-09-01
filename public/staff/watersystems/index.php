@@ -26,7 +26,7 @@ $watersystem = WaterSystem::find_by_sql($sql);
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
-  <div class="bicycles listing">
+  <div>
     <div class="intro">
       <h2>NIP-CAP Database</h2>
       <h3>T01A Water System</h3>
