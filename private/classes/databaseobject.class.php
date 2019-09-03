@@ -82,6 +82,7 @@ class DatabaseObject {
     $sql .= " LEFT JOIN t03_dqwt";
     $sql .= " ON t03_dqwt.system_id = t01a_water_system.system_name";
     $sql .= " WHERE t01a_water_system.system_name='" . self::$database->escape_string($system_name) . "'";
+    $sql .= " GROUP BY t01a_water_system.system_name";
     $obj_array = static::find_by_sql($sql);
     if(!empty($obj_array)) {
       return ($obj_array);
