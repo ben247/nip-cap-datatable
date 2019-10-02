@@ -1,8 +1,8 @@
 <?php
 
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
+define("DB_SERVER", "");
+define("DB_USER", "");
 define("DB_PASS", "");
-define("DB_NAME", "nip-cap");
+define("DB_NAME", "");
 
 ?>
